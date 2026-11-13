@@ -7,7 +7,7 @@ authors:
 date-released: "2026-11-13"
 version: "0.2.0"
 license: "AGPL-3.0-or-later"
-repository-code: "https://github.com/poge-ai/poge_ai"
+repository-code: "https://github.com/KN-1998/poge_ai"
 abstract: >-
   A research prototype exploring a small decision core that manages explicit memory
   tiers, routes actions between internal generation, memory access and tool execution,

@@ -39,7 +39,7 @@
 需要 Python 3.10+，无第三方运行时依赖。
 
 ```bash
-git clone https://github.com/<your-account>/poge_ai.git
+git clone https://github.com/KN-1998/poge_ai.git
 cd poge_ai
 python -m pip install -e .
 ```

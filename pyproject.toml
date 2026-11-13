@@ -27,8 +27,8 @@ dependencies = []
 dev = ["pytest>=8"]
 
 [project.urls]
-Homepage = "https://github.com/poge-ai/poge_ai"
-Issues = "https://github.com/poge-ai/poge_ai/issues"
+Homepage = "https://github.com/KN-1998/poge_ai"
+Issues = "https://github.com/KN-1998/poge_ai/issues"
 
 [project.scripts]
 poge-ai = "poge_ai.cli:main"
