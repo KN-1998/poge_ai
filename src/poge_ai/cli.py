@@ -29,6 +29,28 @@ DEFAULT_DB = "poge_ai.db"
 DEFAULT_TRACE = "runs/trace.jsonl"
 
 
+def _configure_output() -> None:
+    """Make CLI output survive non-UTF-8 consoles and pipes.
+
+    On Windows, stdout redirected to a pipe uses the legacy locale code page
+    (cp1252/cp936), and printing Chinese raises ``UnicodeEncodeError``. When the
+    stream is not a terminal we switch it to UTF-8; on a real terminal only the
+    error handler is relaxed so the user's own code page is preserved.
+    """
+
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is None:
+            continue  # e.g. io.StringIO in tests
+        try:
+            if not stream.isatty():
+                reconfigure(encoding="utf-8", errors="replace")
+            else:
+                reconfigure(errors="replace")
+        except (ValueError, OSError):  # pragma: no cover - platform dependent
+            continue
+
+
 def _build_store(args: argparse.Namespace) -> MemoryStore:
     return MemoryStore(args.db)
 
@@ -256,6 +278,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    _configure_output()
     parser = build_parser()
     args = parser.parse_args(argv)
     try:

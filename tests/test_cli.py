@@ -109,5 +109,36 @@ class CliTestCase(unittest.TestCase):
         self.assertIn("POGE_AI_BASE_URL", err)
 
 
+class OutputEncodingTests(unittest.TestCase):
+    """Regression test for Windows pipes using a legacy code page."""
+
+    def test_non_utf8_pipe_does_not_crash(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            buffer = io.BytesIO()
+            stream = io.TextIOWrapper(buffer, encoding="cp1252", errors="strict")
+            original = sys.stdout
+            sys.stdout = stream
+            try:
+                code = main(
+                    [
+                        "--db",
+                        str(root / "enc.db"),
+                        "--trace",
+                        str(root / "enc.jsonl"),
+                        "--root",
+                        str(root),
+                        "ask",
+                        "3 * (4 + 5)",
+                    ]
+                )
+            finally:
+                sys.stdout = original
+                stream.flush()
+
+        self.assertEqual(code, 0)
+        self.assertIn("动作", buffer.getvalue().decode("utf-8"))
+
+
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()
