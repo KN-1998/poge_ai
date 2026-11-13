@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Runtime artifacts of the prototype (never commit local state)
+poge_ai.db
+poge_ai.db-wal
+poge_ai.db-shm
+*.sqlite
+*.sqlite3
+runs/
+trace.jsonl
+
+# Model / data artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.gguf
+*.bin
+data/
+datasets/
+checkpoints/
+outputs/
+cache/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Source material that is not part of the published tree
+_staging/
+*.zip
+_testout.txt
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

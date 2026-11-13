@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or discuss this research prototype, please cite the repository."
+title: "poge_ai: a research prototype for an environment-native, memory-managed agent architecture"
+type: software
+authors:
+  - name: "poge_ai contributors"
+date-released: "2026-11-13"
+version: "0.2.0"
+license: "AGPL-3.0-or-later"
+repository-code: "https://github.com/poge-ai/poge_ai"
+abstract: >-
+  A research prototype exploring a small decision core that manages explicit memory
+  tiers, routes actions between internal generation, memory access and tool execution,
+  and is evaluated through heterogeneous review rather than a single benchmark.
+  The repository ships a proposal, a staged research agenda, the original discussion
+  archive, and a dependency-free Python baseline (SQLite memory, rule-based router,
+  permission-scoped tools, JSONL tracing). It makes no validated performance claim.
+keywords:
+  - agent architecture
+  - memory management
+  - action routing
+  - tool use
+  - research prototype

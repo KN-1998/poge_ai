@@ -1,0 +1,28 @@
+name: Research proposal
+description: 提出研究问题、实验或架构改进
+title: "[Research]: "
+labels: ["research"]
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: 假设 / 研究问题
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 相关工作与已有证据
+      description: 请尽量提供论文、代码或数据来源。
+    validations:
+      required: true
+  - type: textarea
+    id: experiment
+    attributes:
+      label: 建议的实验与对照组
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: 可能的失败条件与风险

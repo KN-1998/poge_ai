@@ -1,0 +1,23 @@
+# 许可说明
+
+本仓库包含不同性质的内容，适用不同许可：
+
+- **软件代码**（`src/`、`tests/`、`examples/`、构建脚本）：GNU Affero General Public License
+  v3.0 or later（AGPL-3.0-or-later），全文见 [`LICENSE`](LICENSE)。
+- **文档**（`docs/`、`README.md`、`CHANGELOG.md`、`CONTRIBUTING.md` 等）：Creative Commons
+  Attribution-ShareAlike 4.0 International（CC BY-SA 4.0），
+  <https://creativecommons.org/licenses/by-sa/4.0/>。
+- **第三方模型、数据集、论文、图片、代码与工具**：各自适用其原始许可与使用条款；
+  本仓库不对其重新授权，也不因引用而获得授权。
+
+## 关于 AGPL 的边界
+
+AGPL 适用于软件代码，**不会**自动把第三方模型权重、训练数据或外部服务纳入本项目许可。
+发布模型、数据或衍生作品前，必须逐项审查来源与许可。
+
+未来若发布模型权重，其许可需单独讨论并记录 ADR；当前仓库不对此作出承诺。
+见 [`docs/governance.md`](docs/governance.md)。
+
+## 引用
+
+学术或技术讨论中的引用方式见 [`CITATION.cff`](CITATION.cff)。项目当前不要求贡献者转让版权。
